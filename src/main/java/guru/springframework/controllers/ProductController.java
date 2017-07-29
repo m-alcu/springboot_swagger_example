@@ -2,6 +2,7 @@ package guru.springframework.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
 @Api(value = "onlinestore", description = "Operations pertaining to products in Online Store")
 public class ProductController {
 
@@ -36,26 +37,26 @@ public class ProductController {
         @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value = "/list", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Iterable<Product>> list(Model model) {
         return new ResponseEntity<>(productService.listAllProducts(), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Search a product with an ID", response = Product.class)
-    @RequestMapping(value = "/show/{id}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> showProduct(@PathVariable Integer id, Model model) {
         return new ResponseEntity<>(productService.getProductById(id), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Add a product")
-    @RequestMapping(value = "/add", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
         product = productService.saveProduct(product);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "Update a product")
-    @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT, produces = "application/json")
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product product) {
         Product storedProduct = productService.getProductById(id);
         storedProduct.setDescription(product.getDescription());
@@ -65,7 +66,7 @@ public class ProductController {
     }
 
     @ApiOperation(value = "Delete a product")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = "application/json")
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> delete(@PathVariable Integer id) {
         productService.deleteProduct(id);
         Product product = new Product();
