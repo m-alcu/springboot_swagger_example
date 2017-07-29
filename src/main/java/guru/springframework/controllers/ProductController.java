@@ -13,24 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import guru.springframework.domain.Product;
 import guru.springframework.services.ProductService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
-@Api(value = "onlinestore", description = "Operations pertaining to products in Online Store")
 public class ProductController {
 
+    @Autowired
     private ProductService productService;
 
-    @Autowired
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
-    }
-
-    @ApiOperation(value = "View a list of available products", response = Iterable.class)
+    @ApiOperation(tags = "Product", value = "View a list of available products", response = Iterable.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successfully retrieved list"),
         @ApiResponse(code = 401, message = "You are not authorized to view the resource"),
@@ -42,20 +36,20 @@ public class ProductController {
         return new ResponseEntity<>(productService.listAllProducts(), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Search a product with an ID", response = Product.class)
+    @ApiOperation(tags = "Product", value = "Search a product with an ID", response = Product.class)
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> showProduct(@PathVariable Integer id, Model model) {
         return new ResponseEntity<>(productService.getProductById(id), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Add a product")
+    @ApiOperation(tags = "Product", value = "Add a product")
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
         product = productService.saveProduct(product);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
 
-    @ApiOperation(value = "Update a product")
+    @ApiOperation(tags = "Product", value = "Update a product")
     @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product product) {
         Product storedProduct = productService.getProductById(id);
@@ -65,7 +59,7 @@ public class ProductController {
         return new ResponseEntity<>(productService.saveProduct(storedProduct), HttpStatus.OK);
     }
 
-    @ApiOperation(value = "Delete a product")
+    @ApiOperation(tags = "Product", value = "Delete a product")
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> delete(@PathVariable Integer id) {
         productService.deleteProduct(id);
