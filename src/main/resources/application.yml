@@ -1,0 +1,10 @@
+application:
+  locale:
+    defaultLocale: en
+    supportedLocales:
+      - es
+      - fr
+      - it
+      - en
+      - de
+      - nl
