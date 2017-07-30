@@ -34,8 +34,11 @@ public enum GlobalErrorCode implements ErrorCode {
     /** The parameter required. */
     PARAMETER_REQUIRED("BAS-409"),
 
+    /** The validation error. */
+    VALIDATION_ERROR("BAS-410"),
+
     /** Access denied/forbidden error (used with 401 HTTP status) */
-    ACCESS_DENIED("BAS-410");
+    ACCESS_DENIED("BAS-411");
 
     /** The code. */
     private String code;
