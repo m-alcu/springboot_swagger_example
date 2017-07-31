@@ -2,9 +2,11 @@ package guru.springframework.bootstrap;
 
 import guru.springframework.domain.ClaseInmueble;
 import guru.springframework.domain.Product;
+import guru.springframework.domain.RangoSuperficie;
 import guru.springframework.domain.TipoConstruccion;
 import guru.springframework.repositories.ClaseInmuebleRepository;
 import guru.springframework.repositories.ProductRepository;
+import guru.springframework.repositories.RangoSuperficieRepository;
 import guru.springframework.repositories.TipoConstruccionRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
     private ProductRepository productRepository;
     private ClaseInmuebleRepository claseInmuebleRepositoty;
     private TipoConstruccionRepository tipoConstruccionRepository;
+    private RangoSuperficieRepository rangoSuperficieRepository;
 
 
     private Logger log = Logger.getLogger(SpringJpaBootstrap.class);
@@ -40,11 +43,17 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         this.tipoConstruccionRepository = tipoConstruccionRepository;
     }
 
+    @Autowired
+    public void setRangoSuperficieRepository(RangoSuperficieRepository rangoSuperficieRepository) {
+        this.rangoSuperficieRepository = rangoSuperficieRepository;
+    }
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         loadProducts();
         loadClaseInmueble();
         loadTipoConstruccion();
+        loadRangoSuperficie();
     }
 
     private void loadProducts() {
@@ -80,15 +89,37 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
     }
 
     private void loadTipoConstruccion() {
-        TipoConstruccion rustica = new TipoConstruccion();
-        rustica.setTipoId("RU");
-        rustica.setDescription("Rustica");
-        tipoConstruccionRepository.save(rustica);
+        TipoConstruccion nueva = new TipoConstruccion();
+        nueva.setTipoId("NU");
+        nueva.setDescription("Nueva construccion");
+        tipoConstruccionRepository.save(nueva);
 
-        TipoConstruccion urbana = new TipoConstruccion();
-        urbana.setTipoId("UR");
-        urbana.setDescription("Urbana");
-        tipoConstruccionRepository.save(urbana);
+        TipoConstruccion segundaMano = new TipoConstruccion();
+        segundaMano.setTipoId("SM");
+        segundaMano.setDescription("Segunda mano");
+        tipoConstruccionRepository.save(segundaMano);
+    }
+
+    private void loadRangoSuperficie() {
+        RangoSuperficie rango50 = new RangoSuperficie();
+        rango50.setRangoId("050");
+        rango50.setDescription("50 m2");
+        rangoSuperficieRepository.save(rango50);
+
+        RangoSuperficie rango80 = new RangoSuperficie();
+        rango80.setRangoId("080");
+        rango80.setDescription("80 m2");
+        rangoSuperficieRepository.save(rango80);
+
+        RangoSuperficie rango100 = new RangoSuperficie();
+        rango100.setRangoId("100");
+        rango100.setDescription("100 m2");
+        rangoSuperficieRepository.save(rango100);
+
+        RangoSuperficie rango150 = new RangoSuperficie();
+        rango150.setRangoId("150");
+        rango150.setDescription("150 m2");
+        rangoSuperficieRepository.save(rango150);
     }
 
 
