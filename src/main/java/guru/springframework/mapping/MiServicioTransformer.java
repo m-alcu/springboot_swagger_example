@@ -20,7 +20,9 @@ public class MiServicioTransformer extends AbstractTransformer {
 
         modelMapper = new ModelMapper();
 
-        modelMapper.getConfiguration().setPropertyCondition(context -> context.getMapping().getLastDestinationProperty() != null);
+        modelMapper.getConfiguration().setPropertyCondition(context -> {
+            return context.getMapping().getLastDestinationProperty() != null;
+        });
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
     }

@@ -117,7 +117,7 @@ public class LocaleUtil {
         Enumeration e = Collections.enumeration(q);
         while (e.hasMoreElements()) {
             ArrayList v =
-                    (ArrayList) languages.get(((Double) e.nextElement()).toString());
+                    (ArrayList) languages.get(e.nextElement().toString());
             Enumeration le = Collections.enumeration(v);
             while (le.hasMoreElements()) {
                 String language = (String) le.nextElement();

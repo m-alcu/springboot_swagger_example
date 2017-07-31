@@ -1,7 +1,11 @@
 package guru.springframework.bootstrap;
 
+import guru.springframework.domain.ClaseInmueble;
 import guru.springframework.domain.Product;
+import guru.springframework.domain.TipoConstruccion;
+import guru.springframework.repositories.ClaseInmuebleRepository;
 import guru.springframework.repositories.ProductRepository;
+import guru.springframework.repositories.TipoConstruccionRepository;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -15,6 +19,8 @@ import java.util.List;
 public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private ProductRepository productRepository;
+    private ClaseInmuebleRepository claseInmuebleRepositoty;
+    private TipoConstruccionRepository tipoConstruccionRepository;
 
 
     private Logger log = Logger.getLogger(SpringJpaBootstrap.class);
@@ -24,9 +30,21 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         this.productRepository = productRepository;
     }
 
+    @Autowired
+    public void setClaseInmuebleRepositoty(ClaseInmuebleRepository claseInmuebleRepositoty) {
+        this.claseInmuebleRepositoty = claseInmuebleRepositoty;
+    }
+
+    @Autowired
+    public void setTipoConstruccionRepository(TipoConstruccionRepository tipoConstruccionRepository) {
+        this.tipoConstruccionRepository = tipoConstruccionRepository;
+    }
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         loadProducts();
+        loadClaseInmueble();
+        loadTipoConstruccion();
     }
 
     private void loadProducts() {
@@ -49,8 +67,33 @@ public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedE
         log.info("Saved Mug - id:" + mug.getId());
     }
 
+    private void loadClaseInmueble() {
+        ClaseInmueble viviendaProtegida = new ClaseInmueble();
+        viviendaProtegida.setClaseInmuebleId("VP");
+        viviendaProtegida.setDescription("Vivienda-piso protegida");
+        claseInmuebleRepositoty.save(viviendaProtegida);
 
+        ClaseInmueble viviendaPrivada = new ClaseInmueble();
+        viviendaPrivada.setClaseInmuebleId("PR");
+        viviendaPrivada.setDescription("Vivienda-piso privado");
+        claseInmuebleRepositoty.save(viviendaPrivada);
     }
+
+    private void loadTipoConstruccion() {
+        TipoConstruccion rustica = new TipoConstruccion();
+        rustica.setTipoId("RU");
+        rustica.setDescription("Rustica");
+        tipoConstruccionRepository.save(rustica);
+
+        TipoConstruccion urbana = new TipoConstruccion();
+        urbana.setTipoId("UR");
+        urbana.setDescription("Urbana");
+        tipoConstruccionRepository.save(urbana);
+    }
+
+
+
+}
 
 
 
