@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @ApiModelProperty(notes = "The database generated product ID")
     private Integer id;
     @Version
