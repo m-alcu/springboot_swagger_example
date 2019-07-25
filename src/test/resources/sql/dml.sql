@@ -1,0 +1,1 @@
+INSERT INTO product (id,description,image_url,price,product_id,version) VALUES (3,'Spring Framework Guru Shirt','https://springframework.guru/wp-content/uploads/2015/04/spring_framework_guru_shirt-rf412049699c14ba5b68bb1c09182bfa2_8nax2_512.jpg',18.95,'235268845711068308',0);

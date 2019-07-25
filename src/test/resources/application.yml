@@ -10,14 +10,17 @@ application:
       - nl
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    schema: postgres
-    username: postgres
-    password: docker
-    driver: org.postgresql.Driver
+    url: jdbc:hsqldb:mem:test
+    schema: 
+    username: sa
+    password: 
+    driver: org.hsqldb.jdbcDriver
     hikari:
       connection-timeout: 60000
       maximum-pool-size: 5
-#   jpa:
-#     hibernate:
-#       ddl-auto: create-drop
+  jpa:
+    hibernate:
+      ddl-auto: validate
+flyway:
+  enabled: false
+  validateOnMigrate: false      

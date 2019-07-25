@@ -2,6 +2,8 @@ package guru.springframework.repositories;
 
 import guru.springframework.configuration.RepositoryConfiguration;
 import guru.springframework.domain.Product;
+import guru.springframework.repositories.ProductRepository;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class ProductRepositoryTest {
     @Test
     public void testSaveProduct(){
         //setup product
+        
+        Iterable<Product> productsPrevious = productRepository.findAll();
+        
         Product product = new Product();
         product.setDescription("Spring Framework Guru Shirt");
         product.setPrice(new BigDecimal("18.95"));
@@ -48,13 +53,13 @@ public class ProductRepositoryTest {
         assertEquals(fetchedProduct.getDescription(), fetchedUpdatedProduct.getDescription());
         //verify count of products in DB
         long productCount = productRepository.count();
-        assertEquals(productCount, 1);
+        assertEquals(2, productCount);
         //get all products, list should only have one
         Iterable<Product> products = productRepository.findAll();
         int count = 0;
         for(Product p : products){
             count++;
         }
-        assertEquals(count, 1);
+        assertEquals(count, 2);
     }
 }
