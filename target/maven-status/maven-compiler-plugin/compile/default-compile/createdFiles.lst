@@ -6,6 +6,7 @@ guru\springframework\exception\EntityNotFoundException.class
 guru\springframework\repositories\ProductRepository.class
 guru\springframework\dto\ErrorDetailDto.class
 guru\springframework\exception\MissingHeaderException.class
+guru\springframework\services\impl\ProductServiceImpl.class
 guru\springframework\lang\LocaleConfiguration.class
 guru\springframework\mapping\SimpleTransformer.class
 guru\springframework\controllers\InfoController.class
@@ -20,7 +21,6 @@ guru\springframework\exception\DataValidationException.class
 guru\springframework\exception\BackofficeException.class
 guru\springframework\exception\ParameterNotFoundException.class
 guru\springframework\util\SerializationUtils.class
-guru\springframework\services\ProductServiceImpl.class
 guru\springframework\filter\ResponseLocaleFilter.class
 guru\springframework\exception\FeignClientErrorException.class
 guru\springframework\filter\SmartLocaleResolver.class

@@ -1,7 +1,9 @@
-package guru.springframework.services;
+package guru.springframework.services.impl;
 
 import guru.springframework.domain.Product;
 import guru.springframework.repositories.ProductRepository;
+import guru.springframework.services.ProductService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

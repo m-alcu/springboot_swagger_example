@@ -1,5 +1,5 @@
-C:\proy\springboot_swagger_example\src\test\java\guru\springframework\services\ProductServiceImplSpyTest.java
-C:\proy\springboot_swagger_example\src\test\java\guru\springframework\services\ProductServiceImplMockTest.java
+C:\proy\springboot_swagger_example\src\test\java\guru\springframework\services\unit\ProductServiceImplMockTest.java
 C:\proy\springboot_swagger_example\src\test\java\guru\springframework\SpringBootWebApplicationTests.java
 C:\proy\springboot_swagger_example\src\test\java\guru\springframework\configuration\RepositoryConfiguration.java
-C:\proy\springboot_swagger_example\src\test\java\guru\springframework\repositories\ProductRepositoryTest.java
+C:\proy\springboot_swagger_example\src\test\java\guru\springframework\repositories\integration\ProductRepositoryTestIT.java
+C:\proy\springboot_swagger_example\src\test\java\guru\springframework\services\unit\ProductServiceImplSpyTest.java

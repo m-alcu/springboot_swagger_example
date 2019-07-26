@@ -22,15 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = {"guru.springframework.repositories"})
 @EnableTransactionManagement
 public class RepositoryConfiguration {
-    
-    
-    @Bean
-    ServletRegistrationBean h2servletRegistration(){
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
-        registrationBean.addUrlMappings("/console/*");
-        return registrationBean;
-    }
-    
+       
     /**
      * Data source.
      *

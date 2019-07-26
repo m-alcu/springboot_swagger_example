@@ -1,4 +1,4 @@
-package guru.springframework.repositories;
+package guru.springframework.repositories.integration;
 
 import guru.springframework.configuration.RepositoryConfiguration;
 import guru.springframework.domain.Product;
@@ -18,7 +18,7 @@ import static org.junit.Assert.assertNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {RepositoryConfiguration.class})
-public class ProductRepositoryTest {
+public class ProductRepositoryTestIT {
     private ProductRepository productRepository;
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
@@ -27,9 +27,6 @@ public class ProductRepositoryTest {
     @Test
     public void testSaveProduct(){
         //setup product
-        
-        Iterable<Product> productsPrevious = productRepository.findAll();
-        
         Product product = new Product();
         product.setDescription("Spring Framework Guru Shirt");
         product.setPrice(new BigDecimal("18.95"));

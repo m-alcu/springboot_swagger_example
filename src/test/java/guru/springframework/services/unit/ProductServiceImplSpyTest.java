@@ -1,7 +1,9 @@
-package guru.springframework.services;
+package guru.springframework.services.unit;
 
 import guru.springframework.domain.Product;
 import guru.springframework.repositories.ProductRepository;
+import guru.springframework.services.impl.ProductServiceImpl;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;

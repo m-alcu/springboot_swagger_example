@@ -1,5 +1,5 @@
-guru\springframework\services\ProductServiceImplMockTest.class
-guru\springframework\services\ProductServiceImplSpyTest.class
 guru\springframework\SpringBootWebApplicationTests.class
 guru\springframework\configuration\RepositoryConfiguration.class
-guru\springframework\repositories\ProductRepositoryTest.class
+guru\springframework\services\unit\ProductServiceImplMockTest.class
+guru\springframework\repositories\integration\ProductRepositoryTestIT.class
+guru\springframework\services\unit\ProductServiceImplSpyTest.class

@@ -6,7 +6,6 @@ C:\proy\springboot_swagger_example\src\main\java\guru\springframework\services\P
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\util\ApplicationContextProvider.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\controllers\RevisionHealthCheck.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\exception\MissingConfigurationException.java
-C:\proy\springboot_swagger_example\src\main\java\guru\springframework\services\ProductServiceImpl.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\lang\ErrorMessageResolver.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\mapping\MiServicioTransformer.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\exception\MissingHeaderException.java
@@ -25,6 +24,7 @@ C:\proy\springboot_swagger_example\src\main\java\guru\springframework\controller
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\mapping\Transformer.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\errorcodes\GlobalErrorCode.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\lang\LocaleConfiguration.java
+C:\proy\springboot_swagger_example\src\main\java\guru\springframework\services\impl\ProductServiceImpl.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\errorcodes\ErrorCode.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\dto\ErrorDetailDto.java
 C:\proy\springboot_swagger_example\src\main\java\guru\springframework\util\Constants.java
