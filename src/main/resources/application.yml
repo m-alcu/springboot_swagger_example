@@ -10,7 +10,7 @@ application:
       - nl
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:32768/postgres
+    url: jdbc:postgresql://192.168.99.100:32769/postgres
     schema:
     username: postgres
     password: docker
@@ -21,3 +21,12 @@ spring:
 #   jpa:
 #     hibernate:
 #       ddl-auto: create-drop
+
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
