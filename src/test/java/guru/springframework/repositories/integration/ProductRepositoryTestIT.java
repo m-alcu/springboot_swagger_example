@@ -8,13 +8,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {RepositoryConfiguration.class})
@@ -36,9 +36,10 @@ public class ProductRepositoryTestIT {
         productRepository.save(product);
         assertNotNull(product.getId()); //not null after save
         //fetch from DB
-        Product fetchedProduct = productRepository.findOne(product.getId());
+        Optional<Product> optionalFetchedProduct = productRepository.findById(product.getId());
         //should not be null
-        assertNotNull(fetchedProduct);
+        assertTrue(optionalFetchedProduct.isPresent());
+        Product fetchedProduct = optionalFetchedProduct.get();
         //should equal
         assertEquals(product.getId(), fetchedProduct.getId());
         assertEquals(product.getDescription(), fetchedProduct.getDescription());
@@ -46,7 +47,8 @@ public class ProductRepositoryTestIT {
         fetchedProduct.setDescription("New Description");
         productRepository.save(fetchedProduct);
         //get from DB, should be updated
-        Product fetchedUpdatedProduct = productRepository.findOne(fetchedProduct.getId());
+        Optional<Product> optionalUpdatedProduct = productRepository.findById(product.getId());
+        Product fetchedUpdatedProduct = optionalUpdatedProduct.get();
         assertEquals(fetchedProduct.getDescription(), fetchedUpdatedProduct.getDescription());
         //verify count of products in DB
         long productCount = productRepository.count();

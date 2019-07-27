@@ -7,7 +7,10 @@ import guru.springframework.services.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -28,7 +31,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Integer id) {
         logger.debug("getProductById called");
-        return productRepository.findOne(id);
+        Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
+            return product.get();
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -40,6 +48,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(Integer id) {
         logger.debug("deleteProduct called");
-        productRepository.delete(id);
-    }
+        Optional<Product> product = productRepository.findById(id);
+        if (product.isPresent()) {
+            productRepository.delete(product.get());
+        } else {
+            throw new EmptyResultDataAccessException(1);
+        }
+  }
 }

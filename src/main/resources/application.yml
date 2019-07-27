@@ -10,8 +10,8 @@ application:
       - nl
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    schema: postgres
+    url: jdbc:postgresql://localhost:32768/postgres
+    schema:
     username: postgres
     password: docker
     driver: org.postgresql.Driver
