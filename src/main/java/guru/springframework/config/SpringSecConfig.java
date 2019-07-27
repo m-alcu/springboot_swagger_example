@@ -35,10 +35,7 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     @ConditionalOnProperty(prefix = "flyway", name = "enabled", matchIfMissing = false)
     @Bean(initMethod = "migrate")
     public Flyway flyway(DataSource dataSource) {
-        Flyway flyway = new Flyway();
-        flyway.setDataSource(dataSource);
-        flyway.setSchemas(schema);
-        flyway.setValidateOnMigrate(validateOnMigrate);
+        Flyway flyway = Flyway.configure().dataSource(dataSource).validateOnMigrate(validateOnMigrate).schemas(schema).load();
         return flyway;
     }
 
