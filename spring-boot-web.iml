@@ -115,7 +115,6 @@
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.jacorb:jacorb:3.9" level="project" />
     <orderEntry type="library" name="Maven: org.jacorb:jacorb-omgapi:3.9" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Maven: com.jcabi:jcabi-manifests:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.jcabi:jcabi-log:0.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.0" level="project" />

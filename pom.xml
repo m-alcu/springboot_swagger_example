@@ -110,12 +110,7 @@
 			<artifactId>jacorb</artifactId>
 			<version>3.9</version>
 		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
-		        <!-- Jcabi manifests is a convenient static reader of META-INF/MANIFEST.MF
+		<!-- Jcabi manifests is a convenient static reader of META-INF/MANIFEST.MF
             files. http://manifests.jcabi.com/ -->
         <dependency>
             <groupId>com.jcabi</groupId>
