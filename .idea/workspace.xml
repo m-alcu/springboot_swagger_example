@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88d2090e-3686-4cee-972f-9d6ab477bf66" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/guru/springframework/config/SpringSecConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/guru/springframework/config/SpringSecConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1.0.1__spring_boo_web_ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/PostgreSQL/V1.0.1__spring_boo_web_ddl.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,13 +67,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
+            <state relative-caret-position="255">
               <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/guru/springframework/services/impl/ProductServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="50" column="53" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/sql/dml.sql">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -168,7 +183,6 @@
         <option value="$PROJECT_DIR$/spring-boot-web.iml" />
         <option value="$PROJECT_DIR$/src/main/java/guru/springframework/dto/ErrorDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/guru/springframework/services/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/guru/springframework/repositories/integration/ProductRepositoryTestIT.java" />
         <option value="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplSpyTest.java" />
         <option value="$PROJECT_DIR$/log4j2.xml" />
@@ -180,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/main/java/guru/springframework/config/SpringSecConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/test/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" />
       </list>
     </option>
   </component>
@@ -319,6 +334,14 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="spring-boot-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springboot_swagger_example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -331,7 +354,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564295691654" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564302700890" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mockito_spy_example" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -377,7 +400,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SpringBootWebApplication">
+  <component name="RunManager" selected="JUnit.ProductServiceImplMockTest (1)">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -431,32 +454,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductImplMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceImplMockTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.services.*" />
+          <option name="PATTERN" value="guru.springframework.services.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.services" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.ProductImplMockTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductImplSpyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-boot-web" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="guru.springframework.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.services" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.ProductImplSpyTest" />
+      <option name="PACKAGE_NAME" value="guru.springframework.services.unit" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.unit.ProductServiceImplMockTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -474,6 +481,23 @@
       <option name="PACKAGE_NAME" value="guru.springframework.services" />
       <option name="MAIN_CLASS_NAME" value="guru.springframework.services.ProductServiceImplMockTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceImplMockTest.shouldReturnProduct_whenSaveProductIsCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.services.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.services.unit" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.unit.ProductServiceImplMockTest" />
+      <option name="METHOD_NAME" value="shouldReturnProduct_whenSaveProductIsCalled" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -555,18 +579,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.SpringBootWebApplication" />
-      <item itemvalue="JUnit.ProductImplMockTest" />
-      <item itemvalue="JUnit.ProductImplSpyTest" />
       <item itemvalue="JUnit.ProductServiceImplMockTest" />
       <item itemvalue="JUnit.ProductServiceImplSpyTest" />
+      <item itemvalue="JUnit.ProductServiceImplMockTest (1)" />
+      <item itemvalue="JUnit.ProductServiceImplMockTest.shouldReturnProduct_whenSaveProductIsCalled" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProductServiceImplMockTest (1)" />
+        <item itemvalue="JUnit.ProductServiceImplMockTest.shouldReturnProduct_whenSaveProductIsCalled" />
         <item itemvalue="Application.SpringBootWebApplication" />
         <item itemvalue="JUnit.ProductServiceImplSpyTest" />
         <item itemvalue="JUnit.ProductServiceImplMockTest" />
-        <item itemvalue="JUnit.ProductImplSpyTest" />
-        <item itemvalue="JUnit.ProductImplMockTest" />
       </list>
     </recent_temporary>
   </component>
@@ -676,12 +700,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ProductImplMockTest - 2017.02.24 at 20h 58m 33s.xml">
-      <configuration name="ProductImplMockTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductImplMockTest - 2017.02.24 at 21h 06m 24s.xml">
-      <configuration name="ProductImplMockTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ProductImplMockTest - 2017.02.24 at 21h 06m 38s.xml">
       <configuration name="ProductImplMockTest" configurationId="JUnit" />
     </history-entry>
@@ -706,6 +724,12 @@
     <history-entry file="ProductServiceImplSpyTest - 2017.02.24 at 21h 17m 57s.xml">
       <configuration name="ProductServiceImplSpyTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ProductServiceImplMockTest_(1) - 2019.07.28 at 10h 27m 23s.xml">
+      <configuration name="ProductServiceImplMockTest (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProductServiceImplMockTest_(1) - 2019.07.28 at 10h 28m 12s.xml">
+      <configuration name="ProductServiceImplMockTest (1)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -720,7 +744,7 @@
     <frame x="0" y="23" width="1920" height="1012" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18530351" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18530351" />
       <window_info id="Structure" order="1" weight="0.24971494" />
       <window_info id="Designer" order="2" />
       <window_info id="Nl-Palette" order="3" />
@@ -730,8 +754,8 @@
       <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298611" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5804348" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45217392" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5804348" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.45217392" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32988358" />
@@ -794,7 +818,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/productshow.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/products.html" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/productform.html" />
@@ -904,13 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="65" column="1" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/guru/springframework/controllers/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
@@ -929,13 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/guru/springframework/services/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="51" selection-start-line="51" selection-end-line="55" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1077,8 +1086,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
+        <state relative-caret-position="255">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/sql/dml.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/guru/springframework/services/impl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="50" column="53" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
         </state>
       </provider>
     </entry>

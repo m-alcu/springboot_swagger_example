@@ -56,8 +56,7 @@ public class ProductServiceImplMockTest {
     @Test
     public void shouldCallDeleteMethodOfProductRepository_whenDeleteProductIsCalled() throws Exception {
         // Arrange
-        doNothing().when(productRepository).delete(product);
-        ProductRepository my = Mockito.mock(ProductRepository.class);
+        when(productRepository.findById(5)).thenReturn(Optional.of(product));
         // Act
         productServiceImpl.deleteProduct(5);
         // Assert
