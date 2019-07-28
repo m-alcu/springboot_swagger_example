@@ -23,7 +23,6 @@
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/common/exception/GlobalExceptionHandler.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/services/ProductService.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/services/CRUDService.java
-/Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/mapping/MiServicioTransformer.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/controllers/ProductController.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/exception/ParameterNotFoundException.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/errorcodes/ErrorCode.java
@@ -37,6 +36,7 @@
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/repositories/ProductRepository.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/exception/MissingHeaderException.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/services/impl/ProductServiceImpl.java
+/Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/mapping/MyServiceTransformer.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/exception/AbstractCommonException.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/config/SpringSecConfig.java
 /Users/malcubierre/springboot_swagger_example/src/main/java/guru/springframework/dto/ErrorDetailDto.java

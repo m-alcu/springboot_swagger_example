@@ -29,7 +29,6 @@ guru/springframework/util/Constants.class
 guru/springframework/util/SerializationUtils.class
 guru/springframework/exception/AbstractCommonException.class
 guru/springframework/services/CRUDService.class
-guru/springframework/mapping/MiServicioTransformer.class
 guru/springframework/mapping/SimpleTransformer.class
 guru/springframework/SpringBootWebApplication.class
 guru/springframework/exception/BackofficeException.class
@@ -42,4 +41,5 @@ guru/springframework/domain/Product.class
 guru/springframework/errorcodes/GlobalErrorCode.class
 guru/springframework/exception/OauthServiceRequestException.class
 guru/springframework/exception/EntityNotFoundException.class
+guru/springframework/mapping/MyServiceTransformer.class
 guru/springframework/controllers/ProductController.class

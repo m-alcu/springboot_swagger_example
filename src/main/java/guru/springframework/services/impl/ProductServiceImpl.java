@@ -31,12 +31,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Integer id) {
         logger.debug("getProductById called");
-        Optional<Product> product = productRepository.findById(id);
-        if (product.isPresent()) {
-            return product.get();
-        } else {
-            return null;
-        }
+        return productRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -48,11 +43,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(Integer id) {
         logger.debug("deleteProduct called");
-        Optional<Product> product = productRepository.findById(id);
-        if (product.isPresent()) {
-            productRepository.delete(product.get());
-        } else {
-            throw new EmptyResultDataAccessException(1);
-        }
+        productRepository.deleteById(id);
   }
 }

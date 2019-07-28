@@ -56,10 +56,10 @@ public class ProductServiceImplMockTest {
     @Test
     public void shouldCallDeleteMethodOfProductRepository_whenDeleteProductIsCalled() throws Exception {
         // Arrange
-        when(productRepository.findById(5)).thenReturn(Optional.of(product));
+        doNothing().when(productRepository).deleteById(5);
         // Act
         productServiceImpl.deleteProduct(5);
         // Assert
-        verify(productRepository, times(1)).delete(product);
+        verify(productRepository, times(1)).deleteById(5);
     }
 }

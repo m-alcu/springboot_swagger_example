@@ -36,10 +36,9 @@ public class ProductRepositoryTestIT {
         productRepository.save(product);
         assertNotNull(product.getId()); //not null after save
         //fetch from DB
-        Optional<Product> optionalFetchedProduct = productRepository.findById(product.getId());
+        Product fetchedProduct = productRepository.findById(product.getId()).orElse(null);
         //should not be null
-        assertTrue(optionalFetchedProduct.isPresent());
-        Product fetchedProduct = optionalFetchedProduct.get();
+        assertNotNull(fetchedProduct);
         //should equal
         assertEquals(product.getId(), fetchedProduct.getId());
         assertEquals(product.getDescription(), fetchedProduct.getDescription());
@@ -47,8 +46,7 @@ public class ProductRepositoryTestIT {
         fetchedProduct.setDescription("New Description");
         productRepository.save(fetchedProduct);
         //get from DB, should be updated
-        Optional<Product> optionalUpdatedProduct = productRepository.findById(product.getId());
-        Product fetchedUpdatedProduct = optionalUpdatedProduct.get();
+        Product fetchedUpdatedProduct = productRepository.findById(fetchedProduct.getId()).orElse(null);
         assertEquals(fetchedProduct.getDescription(), fetchedUpdatedProduct.getDescription());
         //verify count of products in DB
         long productCount = productRepository.count();
