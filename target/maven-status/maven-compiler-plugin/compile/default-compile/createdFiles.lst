@@ -13,6 +13,7 @@ guru/springframework/repositories/ProductRepository.class
 guru/springframework/mapping/AbstractTransformer.class
 guru/springframework/errorcodes/ErrorCode.class
 guru/springframework/exception/InvalidParameterValueException.class
+guru/springframework/controllers/BaseController.class
 guru/springframework/locale/LocaleUtil.class
 guru/springframework/services/ProductService.class
 guru/springframework/lang/ErrorMessageResolver.class
@@ -30,6 +31,7 @@ guru/springframework/util/SerializationUtils.class
 guru/springframework/exception/AbstractCommonException.class
 guru/springframework/services/CRUDService.class
 guru/springframework/mapping/SimpleTransformer.class
+guru/springframework/dto/ProductDto.class
 guru/springframework/SpringBootWebApplication.class
 guru/springframework/exception/BackofficeException.class
 guru/springframework/exception/DataValidationException.class

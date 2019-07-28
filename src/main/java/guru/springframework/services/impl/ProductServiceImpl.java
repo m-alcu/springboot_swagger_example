@@ -1,6 +1,7 @@
 package guru.springframework.services.impl;
 
 import guru.springframework.domain.Product;
+import guru.springframework.exception.EntityNotFoundException;
 import guru.springframework.repositories.ProductRepository;
 import guru.springframework.services.ProductService;
 
@@ -31,7 +32,12 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Integer id) {
         logger.debug("getProductById called");
-        return productRepository.findById(id).orElse(null);
+        Optional<Product> product = productRepository.findById(id);
+        if(product.isPresent()) {
+            return product.get();
+        } else {
+            throw new EntityNotFoundException("Product", id.toString());
+        }
     }
 
     @Override
