@@ -3,8 +3,7 @@ package guru.springframework.bootstrap;
 import guru.springframework.domain.Product;
 import guru.springframework.repositories.ProductRepository;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -12,13 +11,12 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
+@Log4j2
 @Component
 public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
     private ProductRepository productRepository;
 
-
-    private Logger log = LogManager.getLogger(SpringJpaBootstrap.class);
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
