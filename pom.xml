@@ -122,6 +122,11 @@
 		    <artifactId>commons-lang3</artifactId>
 		    <version>3.0</version>
 		</dependency>
+		<!-- lonbok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
         <!-- HikariCP connection pool -->
         <dependency>
             <groupId>com.zaxxer</groupId>
