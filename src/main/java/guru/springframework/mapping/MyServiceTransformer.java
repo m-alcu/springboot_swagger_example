@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * Transformer with Entity <-> DTO mapping configurations.
  */
 @Component
-public class MiServicioTransformer extends AbstractTransformer {
+public class MyServiceTransformer extends AbstractTransformer {
 
     /**
      * It starts the model mapper and it configuration.
