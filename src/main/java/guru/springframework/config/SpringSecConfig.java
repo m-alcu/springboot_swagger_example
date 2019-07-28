@@ -15,6 +15,12 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
     
     @Value("${spring.datasource.schema}")
     private String schema;
+    @Value("${spring.datasource.url}")
+    private String url;
+    @Value("${spring.datasource.username}")
+    private String username;
+    @Value("${spring.datasource.password}")
+    private String password;
     @Value("${flyway.validateOnMigrate:true}")
     private Boolean validateOnMigrate;    
 
@@ -25,18 +31,5 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.headers().frameOptions().disable();
     }
 
-    
-    /**
-     * Flyway
-     *
-     * @param dataSource the data source
-     * @return the flyway
-     */
-    @ConditionalOnProperty(prefix = "flyway", name = "enabled", matchIfMissing = false)
-    @Bean(initMethod = "migrate")
-    public Flyway flyway(DataSource dataSource) {
-        Flyway flyway = Flyway.configure().dataSource(dataSource).validateOnMigrate(validateOnMigrate).schemas(schema).load();
-        return flyway;
-    }
 
 }

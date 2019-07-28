@@ -18,9 +18,11 @@ spring:
     hikari:
       connection-timeout: 60000
       maximum-pool-size: 5
+  flyway:
+    enabled: false
   jpa:
     hibernate:
       ddl-auto: validate
 flyway:
-  enabled: false
-  validateOnMigrate: false      
+  validateOnMigrate: false
+  locations: classpath:/db/migration/{vendor}/
