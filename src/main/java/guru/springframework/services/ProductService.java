@@ -1,14 +1,58 @@
 package guru.springframework.services;
 
 
-import guru.springframework.domain.Product;
+import guru.springframework.entity.ProductEntity;
+
+import java.util.List;
 
 public interface ProductService {
-    Iterable<Product> listAllProducts();
 
-    Product getProductById(Integer id);
+    /**
+     * Find by id.
+     *
+     * @param id the id
+     * @return the product
+     */
+    ProductEntity findById(Integer id);
 
-    Product saveProduct(Product product);
+    /**
+     * Find all.
+     *
+     * @return the list
+     */
+    List<ProductEntity> findAll();
 
-    void deleteProduct(Integer id);
+
+    /**
+     * Insert.
+     *
+     * @param product the markup
+     * @return rows affected
+     */
+    int insert(ProductEntity product);
+
+    /**
+     * Update.
+     *
+     * @param product the markup
+     * @return rows affected
+     */
+    int update(ProductEntity product);
+
+    /**
+     * Delete.
+     *
+     * @param id the id
+     */
+    void delete(Integer id);
+
+    /**
+     * Exist.
+     *
+     * @param id the id
+     * @return the boolean
+     */
+    Boolean exist(Integer id);
+
+
 }

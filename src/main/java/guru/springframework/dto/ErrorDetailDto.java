@@ -12,14 +12,14 @@ import io.swagger.annotations.ApiModelProperty;
  * @author yramos on 25/01/2017.
  */
 @JsonPropertyOrder({
-    "domain", "message", "reason"
+    "entity", "message", "reason"
 })
 public class ErrorDetailDto implements Serializable {
 
     private static final long serialVersionUID = 3052513175800561504L;
 
-    @ApiModelProperty(value = "Error detail domain")
-    @JsonProperty("domain")
+    @ApiModelProperty(value = "Error detail entity")
+    @JsonProperty("entity")
     private String domain;
 
     @ApiModelProperty(value = "Error detail message")
@@ -40,7 +40,7 @@ public class ErrorDetailDto implements Serializable {
     /**
      * Instantiates a new Error detail dto.
      *
-     * @param domain the domain
+     * @param domain the entity
      * @param message the message
      * @param reason the reason
      */
@@ -72,21 +72,21 @@ public class ErrorDetailDto implements Serializable {
      * <pre>
      * {
      *     "error":{
-     *         "errors": [{"domain": "Calendar"}]
+     *         "errors": [{"entity": "Calendar"}]
      *     }
      * }
      * </pre>
      *
-     * @return the domain
+     * @return the entity
      */
     public String getDomain() {
         return domain;
     }
 
     /**
-     * Sets domain.
+     * Sets entity.
      *
-     * @param domain the domain
+     * @param domain the entity
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -104,7 +104,7 @@ public class ErrorDetailDto implements Serializable {
      *     "error":{
      *         "code": 404
      *         "message": "File could not be read",
-     *         "errors": [{"domain":"Voucher", "message": "File Not Found"}]
+     *         "errors": [{"entity":"Voucher", "message": "File Not Found"}]
      *     }
      * }
      * </pre>
@@ -157,7 +157,7 @@ public class ErrorDetailDto implements Serializable {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("domain: ").append(domain).append(", message: ").append(message).append(", reason: ").append(reason);
+        sb.append("entity: ").append(domain).append(", message: ").append(message).append(", reason: ").append(reason);
         return sb.toString();
     }
 

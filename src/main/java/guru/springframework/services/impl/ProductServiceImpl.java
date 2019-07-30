@@ -1,54 +1,58 @@
 package guru.springframework.services.impl;
 
-import guru.springframework.domain.Product;
-import guru.springframework.exception.EntityNotFoundException;
-import guru.springframework.repositories.ProductRepository;
+import guru.springframework.dao.ProductDao;
+import guru.springframework.entity.ProductEntity;
 import guru.springframework.services.ProductService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
+
+@Log4j2
 @Service
 public class ProductServiceImpl implements ProductService {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    private ProductRepository productRepository;
 
+    /**
+     * The dao product.
+     */
     @Autowired
-    public void setProductRepository(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    private ProductDao productDao;
+
+    @Override
+    public List<ProductEntity> findAll() {
+        log.debug("findAll called");
+        return productDao.findAll();
     }
 
     @Override
-    public Iterable<Product> listAllProducts() {
-        logger.debug("listAllProducts called");
-        return productRepository.findAll();
+    public ProductEntity findById(Integer id) {
+        log.debug("findById called");
+        return productDao.findById(id);
     }
 
     @Override
-    public Product getProductById(Integer id) {
-        logger.debug("getProductById called");
-        Optional<Product> product = productRepository.findById(id);
-        if(product.isPresent()) {
-            return product.get();
-        } else {
-            throw new EntityNotFoundException("Product", id.toString());
-        }
+    public int insert(ProductEntity product) {
+        log.debug("insert called");
+        return productDao.insert(product);
     }
 
     @Override
-    public Product saveProduct(Product product) {
-        logger.debug("saveProduct called");
-        return productRepository.save(product);
+    public int update(ProductEntity product) {
+        log.debug("update called");
+        return productDao.update(product);
     }
 
     @Override
-    public void deleteProduct(Integer id) {
-        logger.debug("deleteProduct called");
-        productRepository.deleteById(id);
+    public void delete(Integer id) {
+        log.debug("delete called");
+        productDao.delete(id);
   }
+
+    @Override
+    public Boolean exist(Integer id) {
+        return productDao.exists(id);
+    }
+
 }

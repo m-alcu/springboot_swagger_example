@@ -1,22 +1,17 @@
 package guru.springframework.services.unit;
 
-import guru.springframework.domain.Product;
-import guru.springframework.repositories.ProductRepository;
+import guru.springframework.dao.ProductDao;
+import guru.springframework.entity.ProductEntity;
 import guru.springframework.services.impl.ProductServiceImpl;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.util.Optional;
-
-import static org.mockito.Mockito.*;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.mockito.Mockito.*;
 
 
 
@@ -24,42 +19,41 @@ public class ProductServiceImplMockTest {
 
     private ProductServiceImpl productServiceImpl;
     @Mock
-    private ProductRepository productRepository;
+    private ProductDao productDao;
     @Mock
-    private Product product;
+    private ProductEntity product;
     @Before
     public void setupMock() {
         MockitoAnnotations.initMocks(this);
         productServiceImpl=new ProductServiceImpl();
-        productServiceImpl.setProductRepository(productRepository);
         product.setId(5);
     }
     @Test
     public void shouldReturnProduct_whenGetProductByIdIsCalled() throws Exception {
         // Arrange
-        when(productRepository.findById(5)).thenReturn(Optional.of(product));
+        when(productDao.findById(5)).thenReturn(product);
         // Act
-        Product retrievedProduct = productServiceImpl.getProductById(5);
+        ProductEntity retrievedProduct = productServiceImpl.findById(5);
         // Assert
         assertThat(retrievedProduct, is(equalTo(product)));
 
     }
     @Test
-    public void shouldReturnProduct_whenSaveProductIsCalled() throws Exception {
+    public void shouldReturnProduct_whenUpdateProductIsCalled() throws Exception {
         // Arrange
-        when(productRepository.save(product)).thenReturn(product);
+        when(productDao.update(product)).thenReturn(1);
         // Act
-        Product savedProduct = productServiceImpl.saveProduct(product);
+        Integer result = productServiceImpl.update(product);
         // Assert
-        assertThat(savedProduct, is(equalTo(product)));
+        assertThat(result, is(equalTo(1)));
     }
     @Test
     public void shouldCallDeleteMethodOfProductRepository_whenDeleteProductIsCalled() throws Exception {
         // Arrange
-        doNothing().when(productRepository).deleteById(5);
+        doNothing().when(productDao).delete(5);
         // Act
-        productServiceImpl.deleteProduct(5);
+        productServiceImpl.delete(5);
         // Assert
-        verify(productRepository, times(1)).deleteById(5);
+        verify(productDao, times(1)).delete(5);
     }
 }

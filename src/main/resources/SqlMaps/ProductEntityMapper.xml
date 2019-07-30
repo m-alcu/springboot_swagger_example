@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guru.springframework.dao.ProductDao">
+
+    <resultMap id="ProductResultMap" type="guru.springframework.entity.ProductEntity">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="version" jdbcType="INTEGER" property="version" />
+        <result column="cod_product" jdbcType="VARCHAR" property="codProduct" />
+        <result column="str_description" jdbcType="VARCHAR" property="strDescription" />
+        <result column="str_image_url" jdbcType="VARCHAR" property="strImageUrl" />
+        <result column="amt_price" jdbcType="NUMERIC" property="amtPrice" />
+        <result column="dat_user_created" jdbcType="TIMESTAMP" javaType="java.time.LocalDateTime"
+                typeHandler="guru.springframework.handler.LocalDateTimeTypeHandler"
+                property="creationDate"/>
+        <result column="cod_user_created" jdbcType="VARCHAR" property="createdBy"/>
+        <result column="dat_user_modified" jdbcType="TIMESTAMP" javaType="java.time.LocalDateTime"
+                typeHandler="guru.springframework.handler.LocalDateTimeTypeHandler"
+                property="modificationDate"/>
+        <result column="cod_user_modified" jdbcType="VARCHAR" property="modifiedBy"/>
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, version, cod_product, str_description, str_image_url, amt_price,
+        dat_user_created, cod_user_created, dat_user_modified, cod_user_modified
+    </sql>
+
+    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select 'false' as QUERYID,
+        <include refid="Base_Column_List" />
+        from product
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="findAll" resultMap="DiscountResultMap">
+        select 'false' as QUERYID,
+        <include refid="Base_Column_List" />
+        from product
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+            parameterType="guru.springframework.entity.ProductEntity">
+        insert into product (
+                ID,
+                VERSION,
+                COD_PRODUCT,
+                STR_DESCRIPTION,
+                STR_IMAGE_URL,
+                AMT_PRICE,
+                DAT_USER_CREATED,
+                COD_USER_CREATED)
+        values (
+            #{id},
+            #{version},
+            #{codProduct},
+            #{strDescription},
+            #{strImageUrl},
+            #{amtPrice},
+            CURRENT_TIMESTAMP,
+            #{createdBy})
+    </insert>
+
+    <update id="update" parameterType="guru.springframework.entity.ProductEntity">
+        update discount
+        set
+        VERSION = #{version},
+        COD_PRODUCT = #{codProduct},
+        STR_DESCRIPTION = #{strDescription},
+        STR_IMAGE_URL = #{strImageUrl},
+        AMT_PRICE = #{amtPrice},
+        DAT_USER_MODIFIED = CURRENT_TIMESTAMP,
+        COD_USER_MODIFIED = #{modifiedBy,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
+
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from product
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+</mapper>
+

@@ -26,7 +26,7 @@ public class CommonExceptionDetail implements Serializable {
      * Creates an instance of {@link CommonExceptionDetail}
      * 
      * @param errorCode the error
-     * @param domain the domain of the error
+     * @param domain the entity of the error
      * @param reason the reason of the error
      * @param errorMessageParams parameters to personalize the error message
      */
@@ -41,7 +41,7 @@ public class CommonExceptionDetail implements Serializable {
      * Creates an instance of {@link CommonExceptionDetail}
      *
      * @param errorCode the error
-     * @param domain the domain of the error
+     * @param domain the entity of the error
      * @param errorMessageParams parameters to personalize the error message
      */
     public CommonExceptionDetail(ErrorCode errorCode, String domain, Object... errorMessageParams) {
@@ -65,7 +65,7 @@ public class CommonExceptionDetail implements Serializable {
      * Creates an instance of {@link CommonExceptionDetail}
      *
      * @param errorCode the error
-     * @param domain the domain of the error
+     * @param domain the entity of the error
      * @param reason the exception causing the error
      * @param errorMessageParams parameters to personalize the error message
      */
@@ -99,9 +99,9 @@ public class CommonExceptionDetail implements Serializable {
     }
 
     /**
-     * Gets the domain where the error occurred
+     * Gets the entity where the error occurred
      * 
-     * @return the domain
+     * @return the entity
      */
     public String getDomain() {
         return domain;
