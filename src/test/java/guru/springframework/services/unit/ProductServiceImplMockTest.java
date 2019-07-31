@@ -26,10 +26,9 @@ public class ProductServiceImplMockTest {
     public void setupMock() {
         MockitoAnnotations.initMocks(this);
         productServiceImpl=new ProductServiceImpl();
-        product.setId(5);
     }
     @Test
-    public void shouldReturnProduct_whenGetProductByIdIsCalled() throws Exception {
+    public void shouldReturnProduct_whenFindByIdIsCalled() throws Exception {
         // Arrange
         when(productDao.findById(5)).thenReturn(product);
         // Act

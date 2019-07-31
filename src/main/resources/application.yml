@@ -10,10 +10,10 @@ application:
       - nl
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:32768/postgres
+    url: jdbc:postgresql://192.168.99.100:32769/postgres
     schema:
-    username: martin
-    password: martin
+    username: postgres
+    password: docker
     driver: org.postgresql.Driver
     hikari:
       connection-timeout: 60000

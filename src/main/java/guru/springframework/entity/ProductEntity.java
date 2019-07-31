@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class ProductEntity {
+public class ProductEntity extends AuditableEntity {
     private Integer id;
     private Integer version;
     private String productId;
