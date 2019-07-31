@@ -11,9 +11,6 @@ import guru.springframework.errorcodes.GlobalErrorCode;
 /**
  * Common exception for generic use. It will serve as the base for other exceptions.
  */
-@SuppressWarnings({
-    "squid:S1165", "squid:S1948"
-})
 public abstract class AbstractCommonException extends RuntimeException {
 
     /** The Constant serialVersionUID. */

@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,10 +21,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableAutoConfiguration
-@EntityScan(basePackages = {"guru.springframework.entity"})
-@EnableJpaRepositories(basePackages = {"guru.springframework.repositories"})
+@EntityScan(basePackages = {"guru.springframework"})
 @EnableTransactionManagement
-public class RepositoryConfiguration {
+public class TestConfiguration {
        
     /**
      * Data source.
@@ -40,37 +38,6 @@ public class RepositoryConfiguration {
             .addScript("/sql/dml.sql")
             .build();
     }
-
-    @Bean
-    @Primary
-    public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
-
-        //Session && datasource
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSource());
-
-        //Configuration
-        sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
-        sqlSessionFactoryBean.setDatabaseIdProvider(databaseIdProvider());
-
-        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryBean.getObject();
-        sqlSessionFactory.getConfiguration().setMapUnderscoreToCamelCase(true);
-        sqlSessionFactory.getConfiguration().setJdbcTypeForNull(JdbcType.NULL);
-
-        return sqlSessionFactoryBean;
-    }
-
-    @Bean
-    public VendorDatabaseIdProvider databaseIdProvider() {
-        Properties properties = new Properties();
-        properties.put("PostgreSQL", "postgresql");
-        properties.put("HSQL Database Engine", "hsql");
-
-        VendorDatabaseIdProvider vendorDatabaseIdProvider = new VendorDatabaseIdProvider();
-        vendorDatabaseIdProvider.setProperties(properties);
-        return vendorDatabaseIdProvider;
-    }
-
 
     @Bean
     public PropertySourcesPlaceholderConfigurer properties() {

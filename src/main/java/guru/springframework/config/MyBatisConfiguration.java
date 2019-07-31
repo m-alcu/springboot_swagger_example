@@ -48,7 +48,6 @@ public class MyBatisConfiguration {
      */
     @Bean
     @Primary
-    @SuppressWarnings("squid:S00112")
     public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setTypeHandlersPackage(LocalDateTimeTypeHandler.class.getPackage().getName());
@@ -69,7 +68,6 @@ public class MyBatisConfiguration {
      * @throws Exception exception configuring SQL Session Factory
      */
     @Bean
-    @SuppressWarnings("squid:S00112")
     public SqlSessionFactoryBean sqlBatchSessionFactory() throws Exception {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setTypeHandlersPackage(LocalDateTimeTypeHandler.class.getPackage().getName());

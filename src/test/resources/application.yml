@@ -20,9 +20,6 @@ spring:
       maximum-pool-size: 5
   flyway:
     enabled: false
-  jpa:
-    hibernate:
-      ddl-auto: validate
 flyway:
   validateOnMigrate: false
   locations: classpath:/db/migration/{vendor}/

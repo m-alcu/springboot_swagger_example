@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88d2090e-3686-4cee-972f-9d6ab477bf66" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.factorypath" beforeDir="false" afterPath="$PROJECT_DIR$/.factorypath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/guru/springframework/configuration/RepositoryConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/guru/springframework/configuration/RepositoryConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/guru/springframework/services/unit/ProductServiceImplMockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/guru/springframework/configuration/RepositoryConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/guru/springframework/configuration/TestConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/guru/springframework/repositories/integration/ProductRepositoryTestIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/guru/springframework/services/integration/ProductServiceTestIT.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,24 +34,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>StrongPasswordEncryptor</find>
-      <find>groo</find>
-      <find>commons-collections</find>
-      <find>log4j</find>
-      <find>collections</find>
-      <find>datasource</find>
-      <find>flywa</find>
-      <find>groovy</find>
-      <find>jpa</find>
-      <find>maven-compiler-plugin</find>
-      <find>log</find>
-      <find>BAS-000</find>
-      <find>DiscountResultMap</find>
-      <find>codProduct</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -69,11 +56,6 @@
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="102" />
-    <option name="width" value="1630" />
-    <option name="height" value="1012" />
   </component>
   <component name="ProjectId" id="1Ojpt8jlyHwil5hT9YuNvi8Z2Iw" />
   <component name="PropertiesComponent">
@@ -144,29 +126,31 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProductServiceImplMockTest.shouldReturnProduct_whenUpdateProductIsCalled">
+  <component name="RunManager" selected="JUnit.ProductServiceTestIT">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringBootWebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.SpringBootWebApplication" />
-      <module name="spring-boot-web" />
+    <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="guru.springframework.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="ProductRepositoryTestIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-boot-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="guru.springframework.repositories.integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="guru.springframework.repositories.integration" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.repositories.integration.ProductRepositoryTestIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,51 +171,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplMockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceImplSpyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.services.*" />
+          <option name="PATTERN" value="guru.springframework.services.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.services" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.ProductServiceImplMockTest" />
+      <option name="PACKAGE_NAME" value="guru.springframework.services.unit" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.unit.ProductServiceImplSpyTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplMockTest.shouldCallDeleteMethodOfProduct_whenDeleteIsCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductServiceTestIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.services.unit.*" />
+          <option name="PATTERN" value="guru.springframework.services.integration.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.services.unit" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.unit.ProductServiceImplMockTest" />
-      <option name="METHOD_NAME" value="shouldCallDeleteMethodOfProduct_whenDeleteIsCalled" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="guru.springframework.services.integration" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.integration.ProductServiceTestIT" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductServiceImplMockTest.shouldReturnProduct_whenUpdateProductIsCalled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpringBootWebApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-web" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="guru.springframework.services.unit.*" />
+          <option name="PATTERN" value="guru.springframework.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="guru.springframework.services.unit" />
-      <option name="MAIN_CLASS_NAME" value="guru.springframework.services.unit.ProductServiceImplMockTest" />
-      <option name="METHOD_NAME" value="shouldReturnProduct_whenUpdateProductIsCalled" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="guru.springframework" />
+      <option name="MAIN_CLASS_NAME" value="guru.springframework.SpringBootWebApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -304,20 +286,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SpringBootWebApplication" />
       <item itemvalue="JUnit.ProductServiceImplMockTest (1)" />
-      <item itemvalue="JUnit.ProductServiceImplMockTest" />
       <item itemvalue="Spring Boot.SpringBootWebApplication" />
-      <item itemvalue="JUnit.ProductServiceImplMockTest.shouldCallDeleteMethodOfProduct_whenDeleteIsCalled" />
-      <item itemvalue="JUnit.ProductServiceImplMockTest.shouldReturnProduct_whenUpdateProductIsCalled" />
+      <item itemvalue="JUnit.ProductServiceImplSpyTest" />
+      <item itemvalue="JUnit.SpringBootWebApplicationTests" />
+      <item itemvalue="JUnit.ProductRepositoryTestIT" />
+      <item itemvalue="JUnit.ProductServiceTestIT" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProductServiceImplMockTest.shouldReturnProduct_whenUpdateProductIsCalled" />
-        <item itemvalue="JUnit.ProductServiceImplMockTest.shouldCallDeleteMethodOfProduct_whenDeleteIsCalled" />
+        <item itemvalue="JUnit.ProductServiceTestIT" />
+        <item itemvalue="JUnit.ProductRepositoryTestIT" />
+        <item itemvalue="JUnit.SpringBootWebApplicationTests" />
+        <item itemvalue="JUnit.ProductServiceImplSpyTest" />
         <item itemvalue="JUnit.ProductServiceImplMockTest (1)" />
-        <item itemvalue="JUnit.ProductServiceImplMockTest" />
-        <item itemvalue="Application.SpringBootWebApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +316,8 @@
       <workItem from="1564501079559" duration="173000" />
       <workItem from="1564501510952" duration="267000" />
       <workItem from="1564588376426" duration="125000" />
-      <workItem from="1564588531428" duration="2071000" />
+      <workItem from="1564588531428" duration="2321000" />
+      <workItem from="1564591762059" duration="2107000" />
     </task>
     <task id="LOCAL-00001" summary="Added DAO Provider implementation for authentication">
       <created>1484667213754</created>
