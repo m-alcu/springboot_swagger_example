@@ -5,6 +5,7 @@ import guru.springframework.entity.ProductEntity;
 import guru.springframework.services.impl.ProductServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -17,6 +18,7 @@ import static org.mockito.Mockito.*;
 
 public class ProductServiceImplMockTest {
 
+    @InjectMocks
     private ProductServiceImpl productServiceImpl;
     @Mock
     private ProductDao productDao;
@@ -25,7 +27,6 @@ public class ProductServiceImplMockTest {
     @Before
     public void setupMock() {
         MockitoAnnotations.initMocks(this);
-        productServiceImpl=new ProductServiceImpl();
     }
     @Test
     public void shouldReturnProduct_whenFindByIdIsCalled() throws Exception {
@@ -47,9 +48,9 @@ public class ProductServiceImplMockTest {
         assertThat(result, is(equalTo(1)));
     }
     @Test
-    public void shouldCallDeleteMethodOfProductRepository_whenDeleteProductIsCalled() throws Exception {
+    public void shouldCallDeleteMethodOfProduct_whenDeleteIsCalled() throws Exception {
         // Arrange
-        doNothing().when(productDao).delete(5);
+        when(productDao.delete(5)).thenReturn(1);
         // Act
         productServiceImpl.delete(5);
         // Assert
