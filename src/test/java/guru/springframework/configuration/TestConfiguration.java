@@ -1,15 +1,10 @@
 package guru.springframework.configuration;
 
-import org.apache.ibatis.mapping.VendorDatabaseIdProvider;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.type.JdbcType;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -17,7 +12,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-import java.util.Properties;
 
 @Configuration
 @EnableAutoConfiguration

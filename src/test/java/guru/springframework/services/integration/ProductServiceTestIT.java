@@ -11,6 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -52,11 +53,7 @@ public class ProductServiceTestIT {
         long productCount = productService.findAll().size();
         assertEquals(2, productCount);
         //get all products, list should only have one
-        Iterable<ProductEntity> products = productService.findAll();
-        int count = 0;
-        for(ProductEntity p : products){
-            count++;
-        }
-        assertEquals(count, 2);
+        List<ProductEntity> products = productService.findAll();
+        assertEquals(products.size(), 2);
     }
 }
