@@ -10,7 +10,7 @@ application:
       - nl
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:32769/postgres
+    url: jdbc:postgresql://localhost:32770/postgres
     schema:
     username: postgres
     password: docker
