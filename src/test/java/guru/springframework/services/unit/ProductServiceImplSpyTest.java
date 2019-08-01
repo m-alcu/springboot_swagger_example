@@ -50,6 +50,7 @@ public class ProductServiceImplSpyTest {
         ProductEntity retrievedProduct = prodServiceSpy.findById(5);
         //Assert
         Mockito.verify(prodServiceSpy).findById(5);
+        assertThat(retrievedProduct, is(equalTo(product)));
     }
     @Test
     public void shouldVerifyThatSaveProductIsNotCalled() throws Exception {
@@ -59,5 +60,6 @@ public class ProductServiceImplSpyTest {
         ProductEntity retrievedProduct = prodServiceSpy.findById(5);
         //Assert
         Mockito.verify(prodServiceSpy,never()).update(product);
+        assertThat(retrievedProduct, is(equalTo(product)));
     }
 }

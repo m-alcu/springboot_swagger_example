@@ -5,6 +5,8 @@ package guru.springframework.exception;
  */
 public class OauthServiceRequestException extends RuntimeException {
 
+    private static final long serialVersionUID = 3084270736453365713L;
+
     /**
      * @see Exception#Exception()
      */

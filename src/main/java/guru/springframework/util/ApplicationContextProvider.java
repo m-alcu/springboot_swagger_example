@@ -19,7 +19,6 @@ public class ApplicationContextProvider implements ApplicationContextAware {
      * @param context a reference to the ApplicationContext.
      */
     @Override
-    @SuppressWarnings("squid:S2696")
     public void setApplicationContext(ApplicationContext context) {
         applicationContext = context;
     }
